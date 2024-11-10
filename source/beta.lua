@@ -77,7 +77,8 @@ mUNC.Functions.runScript(
     },
 
     function(result)
-        print("I check the nigger debugs that no one uses but to check if no shitty docs (im looking at u draco and imgui)")
+        print("✅ Valid debug functions: " .. table.concat(result.Valid, ", "))
+        print("⛔ Invalid debug functions: " .. table.concat(result.Invalid, ", "))
     end
 )
 
