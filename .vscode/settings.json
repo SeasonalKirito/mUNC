@@ -1,5 +1,6 @@
 {
     "robloxLsp.diagnostics.globals": [
-        "hookmetamethod"
+        "hookmetamethod",
+        "newcclosure"
     ]
 }
