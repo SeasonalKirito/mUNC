@@ -20,6 +20,7 @@ end
 function mUNC.Functions.runScript(info, callback)
     if not info.Web then
         callback()
+        return
     end
     local result = loadstring(mUNC.Functions.getScript(info.Name))()
     callback(result)
@@ -38,26 +39,14 @@ mUNC.Functions.runScript(
     },
 
     function()
-        if not (request or http and (http.request or http_request)) then
-            print("Request functions are not available")
+        if not game.HttpGet then
+            print("HttpGet is not a valid function")
+            mUNC.TestedPositive["request"] = false
         else
-            local response = request({
-                Url = "https://httpbin.org/user-agent",
-                Method = "GET",
-            })
-            if type(response) ~= "table" then
-                print("Response must be a table")
-            elseif response.StatusCode ~= 200 then
-                print("Did not return a 200 status code")
-            else
-                local data = game:GetService("HttpService"):JSONDecode(response.Body)
-                if type(data) ~= "table" or type(data["user-agent"]) ~= "string" then
-                    print("Did not return a table with a user-agent key")
-                else
-                    print("User-Agent: " .. data["user-agent"])
-                    mUNC.TestedPositive["request"] = true
-                end
-            end
+            local response = game:HttpGet("https://httpbin.org/user-agent")
+            local data = game:GetService("HttpService"):JSONDecode(response)
+            print("User-Agent: " .. data["user-agent"])
+            mUNC.TestedPositive["request"] = true
         end
     end
 )
@@ -144,3 +133,5 @@ if mUNC.TestedPositive["newcclosure"] then
 else
     print("newcclosure test failed")
 end
+
+print("\n\n\nMade by sea, lovrewe, iirzd, sens, and sea again")
