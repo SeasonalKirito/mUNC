@@ -50,16 +50,29 @@ mUNC.Functions.runScript(
 
 mUNC.Functions.runScript(
     {
+        Name = "iscclosure",
+        Description = "Tests the iscclosure function",
+        Version = "1.0.0"
+    },
+
+    function(result)
+        if result == true then
+            print("Just work nigga (iscclosure is fine just like ur mom, oh boi that was so hard(sigma))")
+        end
+    end
+)
+
+mUNC.Functions.runScript(
+    {
         Name = "newcclosure",
         Description = "Tests the newcclosure function",
         Version = "1.0.0"
     },
 
     function(result)
-        if result ~= true then
-            return
+        if result == true then
+            print("Beta sigma rape function (newcclosure is sigma)")
         end
-        print("Beta sigma rape function (newcclosure is sigma)")
     end
 )
 

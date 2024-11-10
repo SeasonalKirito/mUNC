@@ -1,3 +1,4 @@
+
 if getgenv then
     if typeof(getgenv) == "function"  then
         return "Mr.Beast's stash of cp(cool pizza(lunchly)) (getgenv is real.)"
