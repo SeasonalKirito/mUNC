@@ -37,6 +37,18 @@ mUNC.Functions.runScript(
 
 mUNC.Functions.runScript(
     {
+        Name = "getgenv",
+        Description = "Tests the getgenv table",
+        Version = "1.0.0"
+    },
+
+    function(result)
+        print(result)
+    end
+)
+
+mUNC.Functions.runScript(
+    {
         Name = "hookmetamethod",
         Description = "Tests the hookmetamethod function",
         Version = "1.0.0"
