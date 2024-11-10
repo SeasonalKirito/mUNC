@@ -3,6 +3,9 @@
         "hookmetamethod",
         "newcclosure",
         "getgenv",
-        "iscclosure"
+        "iscclosure",
+        "request",
+        "http",
+        "http_request"
     ]
 }
