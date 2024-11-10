@@ -1,25 +1,14 @@
-print("Testing hookmetamethod (Walkspeed example)")
 
-local success, error = pcall(function()
-    local old
-    old = hookmetamethod(game,"__index", newcclosure(function(self,key)
-        if self == game.Players.LocalPlayer.Character.Humanoid and key == "WalkSpeed" then
-            return 10.5
-        end
-        return old(self,key)
-    end))
+local object = setmetatable({}, { __index = newcclosure(function() return false end), __metatable = "Locked!" })
+local originalIndex = debug.getmetatable(object).__index
+
+local ref = hookmetamethod(object, "__index", function(self, key)
+    if key == "test" then
+        return true
+    else
+        return originalIndex(self, key)
+    end
 end)
 
-if not success then
-    warn("An error occurred: " .. error)
-end
-
-if success then
-    warn("Hooked!")
-    warn(game.Players.LocalPlayer.Character.Humanoid.WalkSpeed)
-    if game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 10.5 then
-        warn("Return Worked!")
-    else
-        warn("Failed to return!")
-    end
-end
+assert(object.test == true, "Failed to hook a metamethod and change the return value")
+assert(ref() == false, "Did not return the original function")

@@ -9,4 +9,4 @@ local function runScript(name)
     loadstring(getScript(name))()
 end
 
-runScript(tests .. "hootmetamethod.lua")
+print(runScript(tests .. "hootmetamethod.lua"))
