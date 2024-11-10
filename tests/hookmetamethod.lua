@@ -1,5 +1,5 @@
 
-local object = setmetatable({}, { __index = function() return false end, __metatable = "Locked!" })
+local object = setmetatable({}, { __index = newcclosure(function() return false end), __metatable = "Locked!" })
 local originalIndex = debug.getmetatable(object).__index
 
 local ref = hookmetamethod(object, "__index", function(self, key)
