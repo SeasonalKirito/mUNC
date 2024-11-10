@@ -49,6 +49,18 @@ mUNC.Functions.runScript(
 
 mUNC.Functions.runScript(
     {
+        Name = "newcclosure",
+        Description = "Tests the newcclosure function",
+        Version = "1.0.0"
+    },
+
+    function(result)
+        print(result)
+    end
+)
+
+mUNC.Functions.runScript(
+    {
         Name = "hookmetamethod",
         Description = "Tests the hookmetamethod function",
         Version = "1.0.0"
