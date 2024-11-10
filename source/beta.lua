@@ -4,7 +4,8 @@ local mUNC = {
     tests = "tests/",
 
 
-    Functions = {}
+    Functions = {},
+    TestedPositive = {}
 }
 
 
@@ -58,25 +59,32 @@ mUNC.Functions.runScript(
     function(result)
         if result == true then
             print("Just work nigga (iscclosure is fine just like ur mom, oh boi that was so hard(sigma))")
+            table.insert(mUNC.TestedPositive, "iscclosure")
         end
     end
 )
 
-mUNC.Functions.runScript(
-    {
-        Name = "newcclosure",
-        Description = "Tests the newcclosure function",
-        Version = "1.0.0"
-    },
+if table.find(mUNC.TestedPositive, "iscclosure") then
+    mUNC.Functions.runScript(
+        {
+            Name = "newcclosure",
+            Description = "Tests the newcclosure function",
+            Version = "1.0.0"
+        },
 
-    function(result)
-        if result == true then
-            print("Beta sigma rape function (newcclosure is sigma)")
+        function(result)
+            if result == true then
+                print("Beta sigma rape function (newcclosure is sigma)")
+                table.insert(mUNC.TestedPositive, "newcclosure")
+            end
         end
-    end
-)
+    )
+else
+    print("iscclosure test failed")
+end
 
-mUNC.Functions.runScript(
+if table.find(mUNC.TestedPositive, "newcclosure") then
+    mUNC.Functions.runScript(
     {
         Name = "hookmetamethod",
         Description = "Tests the hookmetamethod function",
@@ -87,3 +95,7 @@ mUNC.Functions.runScript(
         print(result)
     end
 )
+else
+    print("newcclosure test failed")
+end
+print("Fuck u lil nigger lovrewe")
