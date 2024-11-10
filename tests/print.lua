@@ -1,6 +1,6 @@
 
 if type(print) == "function" then
-    return "Skibidi ohio rizzler (print works 💀)"
+    return true
 else
     while true do
         game:Shutdown()

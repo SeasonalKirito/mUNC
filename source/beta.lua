@@ -64,7 +64,13 @@ mUNC.Functions.runScript(
     },
 
     function(result)
-        print(result)
+        if result then
+            --print("Skibidi ohio rizzler (print works 💀)")
+            print("✅ Print Works 💀")
+            mUNC.TestedPositive["print"] = true
+        else
+            mUNC.TestedPositive["print"] = false
+        end
     end
 )
 
@@ -77,8 +83,14 @@ mUNC.Functions.runScript(
     },
 
     function(result)
-        print("✅ Valid debug functions: " .. table.concat(result.Valid, ", "))
-        print("⛔ Invalid debug functions: " .. table.concat(result.Invalid, ", "))
+        for _,passed in pairs(result.Valid) do
+            mUNC.TestedPositive[passed] = true
+            print("✅ "..passed)
+        end
+        for _,failed in pairs(result.Invalid) do
+            mUNC.TestedPositive[failed] = false
+            print("⛔ "..failed)
+        end
     end
 )
 
