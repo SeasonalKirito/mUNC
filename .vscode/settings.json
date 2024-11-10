@@ -6,6 +6,11 @@
         "iscclosure",
         "request",
         "http",
-        "http_request"
+        "http_request",
+        "getcustomasset",
+        "writefile",
+        "isfolder",
+        "makefolder",
+        "delfolder"
     ]
 }

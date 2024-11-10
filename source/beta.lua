@@ -148,4 +148,29 @@ else
     print("newcclosure test failed")
 end
 
+-- Filesystem
+
+mUNC.Functions.runScript(
+    {
+        Name = "is_make_del_folder",
+        Description = "Tests the getcustomasset function",
+        Version = "1.0.0",
+        Web = true
+    },
+
+    function(result)
+        if result then
+            print("✅ Filesystem Validated [isfolder, makefolder, delfolder]")
+            print("🟨 Making tests dir...")
+            if isfolder(".tests") then
+                delfolder(".tests")
+            end
+            makefolder(".tests")
+        else
+            print("⛔ Filesystem Invalid")
+            print("🔴 "..result)
+        end
+    end
+)
+
 print("\n\n\nMade by sea, lovrewe, iirzd, sens, and sea again")
