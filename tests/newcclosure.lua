@@ -1,6 +1,6 @@
 if newcclosure then
     if typeof(newcclosure) == "function" then
-        return "Beta sigma rape function (newcclosure is sigma)"
+        return true
     else
         return "newcclosure is not a function"
     end

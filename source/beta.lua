@@ -3,6 +3,7 @@ local mUNC = {
     repo = "https://raw.githubusercontent.com/SeasonalKirito/mUNC/main/",
     tests = "tests/",
 
+
     Functions = {}
 }
 
@@ -55,7 +56,10 @@ mUNC.Functions.runScript(
     },
 
     function(result)
-        print(result)
+        if result ~= true then
+            return
+        end
+        print("Beta sigma rape function (newcclosure is sigma)")
     end
 )
 
