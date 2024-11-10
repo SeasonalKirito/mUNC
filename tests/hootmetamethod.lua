@@ -10,10 +10,7 @@ local ref = hookmetamethod(object, "__index", function(self, key)
     end
 end)
 
-if object.test == true then
-    return "Failed to hook a metamethod and change the return value"
-elseif ref() == false then
-    return "Did not return the original function"
-end
--- assert(object.test == true, "Failed to hook a metamethod and change the return value")
--- assert(ref() == false, "Did not return the original function")
+assert(object.test == true, "Failed to hook a metamethod and change the return value")
+assert(ref() == false, "Did not return the original function")
+assert(debug.getmetatable(object).__metatable == "Locked!", "Failed to lock the metatable")
+assert("Sigma patric batemen moment (ur shi works)")
