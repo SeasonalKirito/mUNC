@@ -57,14 +57,14 @@ mUNC.Functions.runScript(
     },
 
     function(result)
-        if result == true then
+        if result then
             print("Just work nigga (iscclosure is fine just like ur mom, oh boi that was so hard(sigma))")
-            table.insert(mUNC.TestedPositive, "iscclosure")
+            mUNC.TestedPositive["iscclosure"] = true
         end
     end
 )
 
-if table.find(mUNC.TestedPositive, "iscclosure") then
+if mUNC.TestedPositive["iscclosure"] then
     mUNC.Functions.runScript(
         {
             Name = "newcclosure",
@@ -73,9 +73,9 @@ if table.find(mUNC.TestedPositive, "iscclosure") then
         },
 
         function(result)
-            if result == true then
+            if result then
                 print("Beta sigma rape function (newcclosure is sigma)")
-                table.insert(mUNC.TestedPositive, "newcclosure")
+                mUNC.TestedPositive["newcclosure"] = true
             end
         end
     )
@@ -83,7 +83,7 @@ else
     print("iscclosure test failed")
 end
 
-if table.find(mUNC.TestedPositive, "newcclosure") then
+if mUNC.TestedPositive["newcclosure"] then
     mUNC.Functions.runScript(
     {
         Name = "hookmetamethod",
