@@ -1,5 +1,5 @@
 
-if (not getgenv().newcclosure) then return false end
+if (not getgenv().newcclosure) then return "newcclosure function not found" end
 
 local function test()
     return true
