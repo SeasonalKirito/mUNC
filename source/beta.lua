@@ -148,6 +148,46 @@ else
     print("newcclosure test failed")
 end
 
+mUNC.Functions.runScript(
+    {
+        Name = "lz4compress",
+        Description = "Tests the lz4 compression function",
+        Version = "1.0.0",
+        Web = true
+    },
+
+    function(result)
+        if result then
+            print("✅ lz4 compression test passed")
+            mUNC.TestedPositive["lz4compress"] = true
+        else
+            print("⛔ lz4 compression test failed")
+        end
+    end
+)
+
+if mUNC.TestedPositive["lz4compress"] then
+    mUNC.Functions.runScript(
+        {
+            Name = "lz4decompress",
+            Description = "Tests the lz4 decompression function",
+            Version = "1.0.0",
+            Web = true
+        },
+
+        function(result)
+            if result then
+                print("✅ lz4 decompression test passed")
+                mUNC.TestedPositive["lz4decompress"] = true
+            else
+                print("⛔ lz4 decompression test failed")
+            end
+        end
+    )
+else
+    print("lz4compress test failed")
+end
+
 -- Filesystem
 
 mUNC.Functions.runScript(
@@ -164,8 +204,10 @@ mUNC.Functions.runScript(
             print("🟨 Making tests dir...")
             if isfolder(".tests") then
                 delfolder(".tests")
+                print("🔴 Deleted leftover .tests folder")
             end
             makefolder(".tests")
+            print("✅ Done, continueing testing")
         else
             print("⛔ Filesystem Invalid")
             print("🔴 "..result)
@@ -173,4 +215,4 @@ mUNC.Functions.runScript(
     end
 )
 
-print("\n\n\nMade by sea, lovrewe, iirzd, sens, and sea again")
+print("\n\n\nMade by sea, lovrewe, iirzd, & ofc inspired by sens")

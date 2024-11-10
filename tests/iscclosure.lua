@@ -1,3 +1,4 @@
+if not iscclosure then return "iscclosure function not found" end
 
 if iscclosure(print) ~= true then
     error("Function 'print' should be a C closure")

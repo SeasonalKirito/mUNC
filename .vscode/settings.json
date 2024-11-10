@@ -11,6 +11,8 @@
         "writefile",
         "isfolder",
         "makefolder",
-        "delfolder"
+        "delfolder",
+        "lz4compress",
+        "lz4decompress"
     ]
 }

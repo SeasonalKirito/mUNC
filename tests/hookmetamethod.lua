@@ -1,3 +1,4 @@
+if (not hookmetamethod) then return "hookmetamethod is not found" end
 
 local object = setmetatable({}, { __index = newcclosure(function() return false end), __metatable = "Locked!" })
 local originalIndex = debug.getmetatable(object).__index
