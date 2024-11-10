@@ -55,14 +55,14 @@ mUNC.Functions.runScript(
                     print("Did not return a table with a user-agent key")
                 else
                     print("User-Agent: " .. data["user-agent"])
-                    mUNC.TestedPositive["iscclosure"] = true
+                    mUNC.TestedPositive["request"] = true
                 end
             end
         end
     end
 )
 
-if not mUNC.TestedPositive["iscclosure"] then
+if not mUNC.TestedPositive["request"] then
     return
 end
 
