@@ -89,7 +89,7 @@ mUNC.Functions.runScript(
         end
         for _,failed in pairs(result.Invalid) do
             mUNC.TestedPositive[failed] = false
-            print("⛔ "..failed)
+            warn("⛔ "..failed)
         end
     end
 )
