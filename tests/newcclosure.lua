@@ -1,4 +1,6 @@
 
+if (not getgenv().newcclosure) then return false end
+
 local function test()
     return true
 end
