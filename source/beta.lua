@@ -149,7 +149,7 @@ if mUNC.TestedPositive["iscclosure"] then
                 print("✅ newcclosure")
                 mUNC.TestedPositive["newcclosure"] = true
             else
-                print("⛔ newcclosure | "..result)
+                print("⛔ newcclosure | "..tostring(result))
                 mUNC.TestedPositive["newcclosure"] = false
             end
         end
