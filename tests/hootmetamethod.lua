@@ -10,5 +10,10 @@ local ref = hookmetamethod(object, "__index", function(self, key)
     end
 end)
 
-assert(object.test == true, "Failed to hook a metamethod and change the return value")
-assert(ref() == false, "Did not return the original function")
+if object.test == true then
+    return "Failed to hook a metamethod and change the return value"
+elseif ref() == false then
+    return "Did not return the original function"
+end
+-- assert(object.test == true, "Failed to hook a metamethod and change the return value")
+-- assert(ref() == false, "Did not return the original function")
