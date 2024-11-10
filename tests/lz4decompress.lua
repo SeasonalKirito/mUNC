@@ -19,7 +19,7 @@ if not success then
 end
 
 local compressed = lz4compress(randomizedString)
-local decompressed = lz4decompress(compressed)
+local decompressed = lz4decompress(compressed, #randomizedString)
 if decompressed == randomizedString then
     return true
 else
