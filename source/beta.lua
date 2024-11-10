@@ -103,7 +103,14 @@ mUNC.Functions.runScript(
     },
 
     function(result)
-        print(result)
+        if result then
+            --print("Mr.Beast's stash of cp(cool pizza(lunchly)) (getgenv is real.)")
+            print("✅ gentgenv")
+            mUNC.TestedPositive["getgenv"] = true
+        else
+            print("⛔ getgenv | "..result)
+            mUNC.TestedPositive["getgenv"] = false
+        end
     end
 )
 
@@ -117,8 +124,12 @@ mUNC.Functions.runScript(
 
     function(result)
         if result then
-            print("Just work nigga (iscclosure is fine just like ur mom, oh boi that was so hard(sigma))")
+            --print("Just work nigga (iscclosure is fine just like ur mom, oh boi that was so hard(sigma))")
+            print("✅ iscclosure")
             mUNC.TestedPositive["iscclosure"] = true
+        else
+            print("⛔ iscclosure | "..result)
+            mUNC.TestedPositive["iscclosure"] = false
         end
     end
 )
@@ -134,13 +145,18 @@ if mUNC.TestedPositive["iscclosure"] then
 
         function(result)
             if result then
-                print("Beta sigma rape function (newcclosure is sigma)")
+                --print("Beta sigma rape function (newcclosure is sigma)")
+                print("✅ newcclosure")
                 mUNC.TestedPositive["newcclosure"] = true
+            else
+                print("⛔ newcclosure | "..result)
+                mUNC.TestedPositive["newcclosure"] = false
             end
         end
     )
 else
-    print("iscclosure test failed")
+    print("⛔ newcclosure skipped (iscclosure failed)")
+    mUNC.TestedPositive["newcclosure"] = false
 end
 
 if mUNC.TestedPositive["newcclosure"] then
@@ -153,11 +169,19 @@ if mUNC.TestedPositive["newcclosure"] then
     },
 
     function(result)
-        print(result)
+        if result then
+            --print("Sigma patrick bateman moment (ur hookmetamethod shi works)")
+            print("✅ hookmetamethod")
+            mUNC.TestedPositive["hookmetamethod"] = true
+        else
+            print("⛔ hookmetamethod | "..result)
+            mUNC.TestedPositive["hookmetamethod"] = false
+        end
     end
 )
 else
-    print("newcclosure test failed")
+    print("⛔ hookmetamethod skipped (newcclosure failed)")
+    mUNC.TestedPositive["hookmetamethod"] = false
 end
 
 mUNC.Functions.runScript(
@@ -174,6 +198,7 @@ mUNC.Functions.runScript(
             mUNC.TestedPositive["lz4compress"] = true
         else
             print("⛔ lz4 compression test failed")
+            mUNC.TestedPositive["lz4compress"] = false
         end
     end
 )
@@ -193,11 +218,13 @@ if mUNC.TestedPositive["lz4compress"] then
                 mUNC.TestedPositive["lz4decompress"] = true
             else
                 print("⛔ lz4 decompression test failed")
+                mUNC.TestedPositive["lz4decompress"] = false
             end
         end
     )
 else
-    print("lz4compress test failed")
+    print("⛔ lz4decompress skipped (lz4compress failed)")
+    mUNC.TestedPositive["lz4decompress"] = false
 end
 
 -- Filesystem
