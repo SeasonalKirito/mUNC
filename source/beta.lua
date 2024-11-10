@@ -77,7 +77,7 @@ mUNC.Functions.runScript(
     },
 
     function(result)
-        print("I check the nigger debugs that no one uses bu to check if no shitty docs (im looking at u draco and imgui)")
+        print("I check the nigger debugs that no one uses but to check if no shitty docs (im looking at u draco and imgui)")
     end
 )
 
