@@ -37,7 +37,7 @@ mUNC.Functions.runScript(
 
 mUNC.Functions.runScript(
     {
-        Name = "hootmetamethod",
+        Name = "hookmetamethod",
         Description = "Tests the hookmetamethod function",
         Version = "1.0.0"
     },
