@@ -21,5 +21,5 @@ elseif ref() ~= false then
 elseif debug.getmetatable(object).__metatable ~= "Locked!" then
     return "Failed to lock the metatable"
 else
-    return "Sigma patric batemen moment (ur hookmetamethod shi works)"
+    return "Sigma patrick bateman moment (ur hookmetamethod shi works)"
 end
