@@ -70,6 +70,19 @@ mUNC.Functions.runScript(
 
 mUNC.Functions.runScript(
     {
+        Name = "debug",
+        Description = "Tests the debug functions",
+        Version = "1.0.0",
+        Web = true
+    },
+
+    function(result)
+        print("I check the nigger debugs that no one uses bu to check if no shitty docs (im looking at u draco and imgui)")
+    end
+)
+
+mUNC.Functions.runScript(
+    {
         Name = "getgenv",
         Description = "Tests the getgenv table",
         Version = "1.0.0",
