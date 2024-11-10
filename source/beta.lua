@@ -85,11 +85,11 @@ mUNC.Functions.runScript(
     function(result)
         for _,passed in pairs(result.Valid) do
             mUNC.TestedPositive[passed] = true
-            print("✅ "..passed)
+            print("✅ debug."..passed)
         end
         for _,failed in pairs(result.Invalid) do
             mUNC.TestedPositive[failed] = false
-            warn("⛔ "..failed)
+            warn("⛔ debug."..failed)
         end
     end
 )
