@@ -1,12 +1,48 @@
-local repo = "https://raw.githubusercontent.com/SeasonalKirito/mUNC/main/"
-local tests = "tests/"
+--<< Variables >>--
+local mUNC = {
+    repo = "https://raw.githubusercontent.com/SeasonalKirito/mUNC/main/",
+    tests = "tests/",
 
-local function getScript(name)
-    return game:HttpGet(repo .. name)
+    Functions = {}
+}
+
+
+
+--<< Functions >>--
+function mUNC.Functions.getScript(name)
+    --print(mUNC.repo .. mUNC.tests .. name .. ".lua")
+    return game:HttpGet(mUNC.repo .. mUNC.tests .. name .. ".lua")
 end
 
-local function runScript(name)
-    loadstring(getScript(name))()
+function mUNC.Functions.runScript(info, callback)
+    local result = loadstring(mUNC.Functions.getScript(info.Name))()
+    callback(result)
+    return result
 end
 
-print(runScript(tests .. "hootmetamethod.lua"))
+
+
+--<< Tests >>--
+mUNC.Functions.runScript(
+    {
+        Name = "print",
+        Description = "Tests the print function",
+        Version = "1.0.0"
+    },
+
+    function(result)
+        print(result)
+    end
+)
+
+mUNC.Functions.runScript(
+    {
+        Name = "hootmetamethod",
+        Description = "Tests the hookmetamethod function",
+        Version = "1.0.0"
+    },
+
+    function(result)
+        print(result)
+    end
+)
