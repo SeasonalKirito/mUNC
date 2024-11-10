@@ -232,7 +232,7 @@ end
 mUNC.Functions.runScript(
     {
         Name = "is_make_del_folder",
-        Description = "Tests the getcustomasset function",
+        Description = "Tests for the isfolder, makefolder, and delfolder functions",
         Version = "1.0.0",
         Web = true
     },
