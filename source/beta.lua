@@ -105,7 +105,7 @@ mUNC.Functions.runScript(
     function(result)
         if result then
             --print("Mr.Beast's stash of cp(cool pizza(lunchly)) (getgenv is real.)")
-            print("✅ gentgenv")
+            print("✅ getgenv")
             mUNC.TestedPositive["getgenv"] = true
         else
             print("⛔ getgenv | "..result)
